@@ -9,6 +9,7 @@ Enibla is an online food ordering and delivery application that allows users to 
 * Framework   - Django
 
 ## Screenshots
+![](./readme_images/Screenshot608.png)
 ![](https://github.com/anthony-ndegwa-dev/Enibla-FoodDeliverySystem/main/readme_images/Screenshot608.png)
 
 
