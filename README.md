@@ -4,9 +4,9 @@ Enibla is an online food ordering and delivery application that allows users to 
 
 ## Technologies
 
-Front-end   - HTML, CSS, JavaScript, Bootstrap
-Backend     - Python
-Framework   - Django
+* Front-end   - HTML, CSS, JavaScript, Bootstrap
+* Backend     - Python
+* Framework   - Django
 
 ## Screenshots
 ![Enibla](/readme_images/Screenshot (608).png)
