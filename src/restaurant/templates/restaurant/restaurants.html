@@ -1,0 +1,75 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 col-sm-12 text-center">
+            <!-- <h2>Restaurants We Get Food From</h2> -->
+            <select name="restaurant" id="restaurant-select">
+                {% for restaurant in restaurants %}
+                    <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+                {% endfor %}
+            </select>
+
+            <h2 id="menu-header"></h2>
+            <ul id="menu-items-list">
+                <!-- Menu items will be dynamically updated here -->
+            </ul>
+
+            <script>
+                // Get references to HTML elements
+                const restaurantSelect = document.getElementById('restaurant-select');
+                const menuHeader = document.getElementById('menu-header');
+                const menuItemsList = document.getElementById('menu-items-list');
+
+                // Function to handle onchange event of the restaurant dropdown
+                restaurantSelect.onchange = function() {
+                    const selectedRestaurantId = restaurantSelect.value;
+                    const selectedRestaurantName = restaurantSelect.options[restaurantSelect.selectedIndex].text;
+
+                    // Update the menu header
+                    menuHeader.textContent = `Menu Items for: ${selectedRestaurantName}`;
+
+                    // Make an AJAX request to fetch menu items for the selected restaurant
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', `/restaurant/menu/${selectedRestaurantId}`, true);
+                    // window.location.href = '/restaurant/menu/' + selectedRestaurantId + '/';
+                    xhr.onload = function() {
+                        if (xhr.status === 200) {
+                            // Update the menu items list with the response from the server
+                            menuItemsList.innerHTML = xhr.responseText;
+                        }
+                    };
+                    xhr.send();
+                };
+            </script>
+
+    <!-- <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 text-center">
+            <form method="GET" action="{% url 'menu-search' %}">
+                <div class="md-form mt-0 active-cyan-2">
+                    <input class="form-control" name="q" type="text" placeholder="Search Our Menu" aria-label="Search" value="{{ request.GET.q }}">
+                </div>
+            </form>
+            <hr></hr>
+        </div>
+    </div> -->
+
+    <div class="row justify-content-center mt-5">
+      {% for item in menu_items %}
+        <div class="col-md-7 col-sm-5 text-center mb-5">
+          <div class="menu-item">
+            <img class="rounded" src="{{ item.image.url }}" width="200" height="180">
+            <h5 class="mt-2">{{ item.name }}</h5>
+            <p>Price: {{ item.price }}</p>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+</div>
+</div>
+</div>
+
+{% endblock content %}
