@@ -9,7 +9,7 @@ Backend     - Python
 Framework   - Django
 
 ## Screenshots
-![Enibla](readme_images/Screenshot (608).png)
+![Enibla](/readme_images/Screenshot (608).png)
 
 
 
