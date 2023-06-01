@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#306">
+    <meta name="viewport" content="width=device-width", inital-scale=1.0, shrink-to-fit=no>
+    <title>Enibla Foods</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.all.css' %}">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts.googleapis.css' %}">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<!-- Material Design Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mdb.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'customer/navigation.html' %}
+    <ul>
+        {% for restaurant in global_data.restaurants %}
+            <li>{{ restaurant.name }}</li>
+        {% endfor %}
+    </ul>
+    {% block content %}
+    {% endblock content %}
+    {% include 'customer/footer.html' %}
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+</html>
