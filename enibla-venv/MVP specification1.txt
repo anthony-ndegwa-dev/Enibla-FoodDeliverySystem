@@ -1,0 +1,66 @@
+Enibla MVP Specification
+
+Architecture
+
+Enibla Architecture
+
+The architecture diagram above illustrates the end-to-end flow of data in the Enibla food delivery application. The system consists of the following components:
+
+    Web Client: The front-end interface that allows users to interact with the application.
+    Web Server: The server-side application that handles requests from the web client and interacts with the database and external APIs.
+    Database: Stores the data related to users, orders, restaurants, menus, and other relevant information.
+    Third-Party APIs: External APIs used for functionalities such as geolocation, payment processing, and restaurant information retrieval.
+
+APIs and Methods
+Web Client to Web Server APIs
+
+    /api/users
+        POST: Creates a new user account with the provided information.
+        GET: Retrieves the user's profile information based on the session ID.
+
+    /api/restaurants
+        GET: Returns a list of restaurants available for food delivery.
+
+    /api/menus
+        GET: Retrieves the menu items for a specific restaurant.
+
+    /api/orders
+        POST: Places a new order with the selected items.
+        GET: Retrieves the user's order history.
+
+Client-Facing APIs or Functions/Methods
+
+    class OrderService
+        placeOrder(user_id, items): Places an order for the specified user with the given items.
+        getOrderHistory(user_id): Retrieves the order history for the specified user.
+
+    class RestaurantService
+        getRestaurants(): Returns a list of available restaurants.
+
+    class MenuService
+        getMenu(restaurant_id): Retrieves the menu items for the specified restaurant.
+
+Third-Party APIs
+
+    Google Maps API - Used for geolocation and calculating distances.
+    Stripe API - Enables secure payment processing.
+    OpenWeather API - Provides weather information to enhance user experience.
+
+Data Model
+
+Enibla Data Model
+
+The data model diagram above represents the structure of the Enibla application's database. It includes the following entities and relationships:
+
+    Users: Stores user profile information, including names, contact details, and addresses.
+    Restaurants: Contains information about registered restaurants, such as names, addresses, and ratings.
+    Menus: Represents the menu items offered by each restaurant, including their names, descriptions, prices, and associated restaurant IDs.
+    Orders: Stores information about each placed order, including the user ID, restaurant ID, order items, total price, and order status.
+
+User Stories
+
+    As a user, I want to create an account and provide my profile information, so I can easily place orders for food delivery.
+    As a user, I want to browse the available restaurants, view their menus, and select items to add to my order.
+    As a user, I want to place an order, specify delivery details, and securely pay for my order.
+    As a user, I want to track the status of my order and receive notifications about its progress.
+    As a user, I want to view my order history and easily reorder previous meals for convenience.
