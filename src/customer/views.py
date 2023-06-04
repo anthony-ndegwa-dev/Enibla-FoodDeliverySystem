@@ -54,7 +54,7 @@ class Order(View):
         items = request.POST.getlist('items[]')
 
         for item in items:
-            menu_items = MenuItem.objects.filter(pk__contains=int(item))
+            menu_items = MenuItem.objects.filter(pk__in=[int(item)])
             for menu_item in menu_items:
                 item_data = {
                     'id': menu_item.pk,
