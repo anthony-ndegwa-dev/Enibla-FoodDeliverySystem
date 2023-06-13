@@ -62,7 +62,16 @@ Enibla is an online food ordering and delivery application that allows users to 
 
 ![Order Status](https://github.com/anthony-ndegwa-dev/Enibla-FoodDeliverySystem/blob/main/readme_images/Screenshot(632).png)
 
+### Link
+[Landing Page](https://enibelafood.netlify.app/)
+[Enibela](http://18.206.206.112)
 
+### Final Project Blog Post:
+[Enibela Blog Post](https://medium.com/@anthonyngunjiri/how-i-designed-enibela-an-online-food-delivery-system-4d8c1ef14d27)
+
+### Authors
+[Anthony Ndegwa](https://www.linkedin.com/in/tony-ndegwa)
+[Seife Demissie](https://www.linkedin.com/in/seife-shiferaw)
 
 
 
