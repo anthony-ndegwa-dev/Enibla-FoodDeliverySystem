@@ -8,6 +8,11 @@ Enibla is an online food ordering and delivery application that allows users to 
 * Backend     - Python
 * Framework   - Django
 
+### Challenge
+The journey of Enibela began with a vision to create a user-friendly platform that connects customers with local restaurants, ensuring quick and hassle-free food delivery. Django, a high-level Python web framework, was chosen for its robustness, scalability, and versatility.
+
+We came up with the idea of adding restaurants page that would lists all the restaurants we collaborate with. This was successful since we managed to implement it and also show menu items. We edited the Restaurants feature with the idea that a user can easily place an order directly from the restaurant’s menu, but that is not the case. A user is able to select a restaurant and view items on the menu of that restaurants, but to place an order the user has to go to the place oder section and place the order from there. We spent too much time tryng to fix the problem but we couldn’t get it working, so currently users cannot place an oder from the restaurants section but only via place oder section, but we’ll fix it soon and it will function as expected.
+
 ## Screenshots
 
 ### Enibla Home Page:
